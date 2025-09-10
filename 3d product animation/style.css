@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ body{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h2{
+    color: #bd4343;
+    font-size: 4em;
+    font-weight: 1000;
+    -webkit-text-stroke: rgb(57, 6, 6) 1px;
+    mix-blend-mode: difference;
+    z-index: 1;
+}
+header p{
+     color: #161719;
+    font-size: 1em;
+    font-weight: 500;
+    -webkit-text-stroke: rgb(57, 6, 6) 1px;
+}
+
+.bannar{
+    margin-top: -70px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.bannar .product{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 500px;
+    height: 500px;
+    bottom: 170px;
+    z-index: 3;
+    display: flex;
+    --left: 0px;
+    transition: 0.7s;
+}
+
+.bannar .product .soda{
+    background: 
+    var(--url) var(--left),
+    url(image/mockup.png);
+    left: calc(50%);
+    position: absolute;
+    transform: translateX(-50%);
+    background-size: auto 100%;
+    background-blend-mode: multiply;
+    mask-image: url(image/mockup.png);
+    mask-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2/4;
+    transition: 0.7s;
+    
+    
+
+}
+.bannar .product:hover{
+    --left :1000px;
+    transform: translateX(-50%) translateY(-120px);
+
+}
+
+
+.bannar .product .soda:nth-child(2){
+    opacity: 0;
+}
+.bannar .product:hover .soda:nth-child(2){
+    opacity: 1;
+}
+
+.bannar .rock {
+    position: absolute;
+    inset: 0 0 0 0;
+    pointer-events: none;
+}
+.bannar .rock img{
+    position: absolute;
+    transition: 0.7s;
+
+}
+
+.bannar .rock img:nth-child(1){
+    height: 20%;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2;
+}
+.bannar:has(.product:hover) .rock img:nth-child(1){
+
+    transform: translateX(-50%) translateY(10%) ;
+}
+.bannar .rock img:nth-child(2){
+    height: 120%;
+    bottom: -100px;
+}
+
+.bannar:has(.product:hover) .rock img:nth-child(2){
+
+    transform: translateX(-20%) translateY(20%) ;
+
+}
+.bannar .rock img:nth-child(3){
+    height: 110%;
+    left: 60%;
+    rotate: -20deg;
+    bottom: -100px;
+}
+.bannar:has(.product:hover) .rock img:nth-child(3){
+
+    transform: translateX(20%) translateY(20%) ;
+
+}
